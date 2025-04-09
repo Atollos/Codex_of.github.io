@@ -1,0 +1,4 @@
+title:Codex of...
+theme: minima
+plugins:
+  - jekyll-feed
