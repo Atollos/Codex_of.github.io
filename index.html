@@ -1,43 +1,45 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="dark">
+<html lang="ru" data-theme="dark"> <!-- Устанавливаем язык и тему по умолчанию -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой красивый сайт</title>
+    <!-- Мета-информация -->
+    <meta charset="UTF-8"> <!-- Кодировка документа -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Адаптивный вьюпорт -->
     
-    <!-- Подключаем CSS -->
-    <link rel="stylesheet" href="assets/css/normalise.css">
-    <link rel="stylesheet" href="assets/css/fonts.css">
-    <link rel="stylesheet" href="assets/css/base.css">
+    <title>Мой сайт</title> <!-- Заголовок вкладки -->
     
-    <!-- Favicon (замените на свой) -->
-    <link rel="icon" href="assets/img/favicon.ico">
+    <!-- Подключение стилей -->
+    <link rel="stylesheet" href="assets/css/normalise.css"> <!-- Сброс стилей -->
+    <link rel="stylesheet" href="assets/css/fonts.css"> <!-- Шрифты -->
+    <link rel="stylesheet" href="assets/css/base.css"> <!-- Основные стили -->
+    
+    <!-- Иконка сайта -->
+    <link rel="icon" href="assets/img/favicon.ico"> <!-- 32x32 пикселя -->
 </head>
 <body>
     <!-- Кнопка переключения темы -->
-    <button class="theme-toggle">🌙</button>
+    <button class="theme-toggle">🌙</button> <!-- Иконка луны по умолчанию -->
 
-    <!-- Обёртка для контента -->
+    <!-- Основная обёртка -->
     <div class="page-wrapper">
-        <!-- Секция 1: Герой -->
-        <section class="hero" data-scroll-section>
+        <!-- Герой-секция -->
+        <section class="hero" data-scroll-section> <!-- Атрибут для анимации -->
             <div class="hero-content">
-                <h1 class="title" data-scroll data-scroll-speed="1">Codex of...</h1>
-                <p class="subtitle" data-scroll data-scroll-speed="0.8">Вдохновись     Настрой     Играй</p>
-                <a href="#about" class="button">Начать приключение</a>
+                <h1 class="title" data-scroll data-scroll-speed="1">Добро пожаловать</h1> <!-- Параллакс-эффект -->
+                <p class="subtitle" data-scroll data-scroll-speed="0.8">Мой потрясающий сайт</p>
+                <a href="#about" class="button">Узнать больше</a> <!-- Кнопка-ссылка -->
             </div>
-            <div class="hero-bg" data-scroll data-scroll-speed="-2"></div>
+            <div class="hero-bg" data-scroll data-scroll-speed="-2"></div> <!-- Фон с параллаксом -->
         </section>
         
-        <!-- Секция 2: О проекте -->
-        <section class="about" data-scroll-section id="about">
+        <!-- Секция "О нас" -->
+        <section class="about" data-scroll-section id="about"> <!-- Якорь для ссылки -->
             <h2>О проекте</h2>
-            <p>Здесь будет ваше описание...</p>
+            <p>Описание проекта...</p>
         </section>
     </div>
 
-    <!-- Подключаем JavaScript -->
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/scrolling.js"></script>
+    <!-- Подключение скриптов -->
+    <script src="assets/js/main.js"></script> <!-- Основная логика -->
+    <script src="assets/js/scrolling.js"></script> <!-- Анимации скролла -->
 </body>
 </html>

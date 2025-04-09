@@ -1,23 +1,22 @@
-// Ждём загрузки страницы
+// Ждём полной загрузки DOM
 document.addEventListener('DOMContentLoaded', function() {
-    // Находим кнопку
+    // Элемент переключения темы
     const themeToggle = document.querySelector('.theme-toggle');
     
-    // Функция для установки темы
+    // Функция установки темы
     function setTheme(theme) {
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
         themeToggle.textContent = theme === 'dark' ? '🌙' : '☀️';
     }
     
-    // Клик по кнопке
+    // Обработчик клика
     themeToggle.addEventListener('click', () => {
         const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme);
+        setTheme(currentTheme === 'dark' ? 'light' : 'dark');
     });
     
-    // Проверяем сохранённую тему
+    // Проверка сохранённой темы
     const savedTheme = localStorage.getItem('theme') || 'dark';
     setTheme(savedTheme);
 });

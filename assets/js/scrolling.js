@@ -1,10 +1,11 @@
 // Анимация появления секций
 const scrollSections = document.querySelectorAll('[data-scroll-section]');
 
+// Проверка видимости секции
 function checkScroll() {
     scrollSections.forEach(section => {
         const sectionTop = section.getBoundingClientRect().top;
-        if (sectionTop < window.innerHeight * 0.8) {
+        if (sectionTop < window.innerHeight * 0.75) {
             section.classList.add('is-visible');
         }
     });
@@ -19,13 +20,16 @@ function updateParallax() {
     });
 }
 
-// Запускаем всё при загрузке и скролле
+// Инициализация
 window.addEventListener('load', function() {
     checkScroll();
     updateParallax();
-});
-
-window.addEventListener('scroll', function() {
-    checkScroll();
-    updateParallax();
+    
+    // Оптимизация производительности
+    window.addEventListener('scroll', function() {
+        requestAnimationFrame(() => {
+            checkScroll();
+            updateParallax();
+        });
+    });
 });

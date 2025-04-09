@@ -1,150 +1,50 @@
-/* ====== ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ ====== */
-/* Задаем цветовые переменные для темной темы (по умолчанию) */
+/* Основные переменные (тёмная тема) */
 :root {
-    --bg-primary: #1a1a1a;         /* Основной цвет фона */
-    --text-primary: #f0f0f0;       /* Основной цвет текста */
-    --accent-color: #6e45e2;       /* Акцентный цвет (кнопки, выделения) */
-    --shadow-color: rgba(0, 0, 0, 0.3); /* Цвет теней */
+    --bg-primary: #1a1a1a; /* Тёмный фон */
+    --text-primary: #f0f0f0; /* Светлый текст */
+    --accent-color: #6e45e2; /* Фиолетовый акцент */
+    --shadow-color: rgba(0, 0, 0, 0.3); /* Тени */
 }
 
-/* Цветовые переменные для светлой темы */
+/* Светлая тема */
 [data-theme="light"] {
-    --bg-primary: #ffffff;         /* Светлый фон */
-    --text-primary: #333333;       /* Темный текст */
-    --shadow-color: rgba(0, 0, 0, 0.1); /* Более светлые тени */
+    --bg-primary: #ffffff;
+    --text-primary: #333333;
+    --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
-/* ====== БАЗОВЫЕ СТИЛИ ====== */
+/* Тело документа */
 body {
-    background-color: var(--bg-primary); /* Используем переменную для фона */
-    color: var(--text-primary);          /* И для текста */
-    transition: background 0.3s ease, color 0.3s ease; /* Плавное переключение темы */
-    margin: 0;                           /* Убираем стандартные отступы */
-    font-family: 'Roboto', sans-serif;    /* Основной шрифт */
-    line-height: 1.6;                     /* Межстрочный интервал */
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: all 0.3s ease; /* Плавное изменение темы */
 }
 
-/* ====== ГЛАВНАЯ ГЕРОЙ-СЕКЦИЯ ====== */
+/* Герой-секция */
 .hero {
-    height: 100vh;                       /* На всю высоту экрана */
+    height: 100vh; /* На весь экран */
+    position: relative; /* Для позиционирования фона */
     display: flex;
-    align-items: center;                 /* Вертикальное выравнивание */
-    justify-content: center;             /* Горизонтальное выравнивание */
-    position: relative;                  /* Для позиционирования фона */
-    overflow: hidden;                    /* Скрываем выходящее за границы */
+    align-items: center; /* Вертикальное центрирование */
+    justify-content: center; /* Горизонтальное центрирование */
 }
 
-/* Контейнер для контента в герой-секции */
+/* Контент героя */
 .hero-content {
-    text-align: center;                  /* Выравнивание текста по центру */
-    z-index: 2;                          /* Над фоном */
-    display: flex;
-    flex-direction: column;              /* Элементы в колонку */
-    align-items: center;                 /* Центрирование по горизонтали */
-    max-width: 800px;                    /* Максимальная ширина контента */
-    padding: 20px;                       /* Внутренние отступы */
+    text-align: center;
+    z-index: 2; /* Поверх фона */
+    max-width: 800px; /* Ограничение ширины */
+    padding: 20px;
 }
 
-/* Стили для основного заголовка */
-.hero-content h1.title {
-    margin-bottom: 40px;                 /* Отступ снизу 40px */
-    font-family: 'Playfair Display', serif; /* Красивый шрифт для заголовка */
-    font-size: 3rem;                     /* Крупный размер */
-    color: var(--text-primary);          /* Цвет из переменной */
-}
-
-/* Стили для подзаголовка */
-.hero-content p.subtitle {
-    margin-bottom: 30px;                 /* Отступ снизу 30px */
-    font-size: 1.5rem;                   /* Размер шрифта */
-    max-width: 600px;                    /* Ограничение ширины */
-}
-
-/* Фоновое изображение герой-секции */
+/* Фон героя */
 .hero-bg {
-    position: absolute;                  /* Абсолютное позиционирование */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;              /* Заполнение фоном */
-    background-position: center;        /* Центрирование фона */
-    z-index: 1;                         /* Под контентом */
-    opacity: 0.8;                       /* Легкая прозрачность */
-}
-
-/* ====== СТИЛИ КНОПКИ ====== */
-.button {
-    display: inline-block;
-    background: var(--accent-color);     /* Цвет из переменной */
-    color: white;
-    padding: 12px 24px;                 /* Внутренние отступы */
-    border-radius: 4px;                 /* Скругление углов */
-    margin-top: 20px;                   /* Отступ сверху */
-    font-weight: bold;                  /* Жирный текст */
-    text-transform: uppercase;          /* Все буквы заглавные */
-    letter-spacing: 1px;                /* Разрядка букв */
-    transition: all 0.3s ease;          /* Плавные анимации */
-    border: none;
-    cursor: pointer;                    /* Указатель при наведении */
-}
-
-/* Эффекты при наведении на кнопку */
-.button:hover {
-    transform: translateY(-3px);        /* Сдвиг вверх */
-    box-shadow: 0 10px 20px var(--shadow-color); /* Тень */
-}
-
-/* ====== КНОПКА ПЕРЕКЛЮЧЕНИЯ ТЕМЫ ====== */
-.theme-toggle {
-    position: fixed;                    /* Фиксированное позиционирование */
-    bottom: 20px;                       /* Отступ снизу */
-    right: 20px;                        /* Отступ справа */
-    background: var(--accent-color);
-    border: none;
-    width: 40px;                        /* Размеры */
-    height: 40px;
-    border-radius: 50%;                 /* Круглая форма */
-    cursor: pointer;
-    z-index: 1000;                      /* Поверх всех элементов */
-    font-size: 1.2rem;                  /* Размер иконки */
-    display: flex;
-    align-items: center;                /* Центрирование иконки */
-    justify-content: center;
-}
-
-/* ====== АНИМАЦИИ ПРОКРУТКИ ====== */
-[data-scroll-section] {
-    opacity: 0;                         /* Начальная прозрачность */
-    transform: translateY(50px);        /* Сдвиг вниз */
-    transition: opacity 0.6s ease, transform 0.6s ease; /* Плавное появление */
-}
-
-/* Класс, добавляемый при появлении секции */
-[data-scroll-section].is-visible {
-    opacity: 1;                         /* Полная видимость */
-    transform: translateY(0);           /* Возврат на место */
-}
-
-/* ====== АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ ====== */
-@media (max-width: 768px) {
-    /* Уменьшаем размеры и отступы на мобильных */
-    .hero-content h1.title {
-        margin-bottom: 30px;
-        font-size: 2rem;
-    }
-    
-    .hero-content p.subtitle {
-        margin-bottom: 20px;
-        font-size: 1.2rem;
-    }
-    
-    .hero-content .button {
-        margin-top: 15px;
-        padding: 10px 20px;
-    }
-    
-    .hero-content {
-        padding: 10px;
-    }
+    background-size: cover;
+    z-index: 1; /* Под контентом */
+    opacity: 0.7; /* Полупрозрачность */
 }

@@ -1,12 +1,21 @@
-/* Подключаем Google Fonts */
+/* Подключение Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap');
 
-/* Основной шрифт */
+/* Основной шрифт для текста */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Читаемый sans-serif */
+    font-weight: 400; /* Обычное начертание */
 }
 
-/* Заголовки */
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
+/* Шрифт для заголовков */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif; /* Красивый шрифт с засечками */
+    font-weight: 700; /* Жирное начертание */
+    margin-top: 0; /* Убираем отступ сверху */
+}
+
+/* Специфичные стили для разных заголовков */
+h1 {
+    font-size: 2.5rem; /* Крупный размер */
+    line-height: 1.2; /* Уменьшенный интервал */
 }
