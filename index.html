@@ -1,12 +1,43 @@
----
-layout: default
-title: Главная
----
-<h1>Мои проекты</h1>
-<ul>
-    {% for project in site.projects %}
-    <li>
-        <a href="{{ project.url }}">{{ project.title }}</a>
-    </li>
-    {% endfor %}
-</ul>
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой красивый сайт</title>
+    
+    <!-- Подключаем CSS -->
+    <link rel="stylesheet" href="assets/css/normalise.css">
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    
+    <!-- Favicon (замените на свой) -->
+    <link rel="icon" href="assets/img/favicon.ico">
+</head>
+<body>
+    <!-- Кнопка переключения темы -->
+    <button class="theme-toggle">🌙</button>
+
+    <!-- Обёртка для контента -->
+    <div class="page-wrapper">
+        <!-- Секция 1: Герой -->
+        <section class="hero" data-scroll-section>
+            <div class="hero-content">
+                <h1 class="title" data-scroll data-scroll-speed="1">Добро пожаловать</h1>
+                <p class="subtitle" data-scroll data-scroll-speed="0.8">Мой потрясающий сайт</p>
+                <a href="#about" class="button">Узнать больше</a>
+            </div>
+            <div class="hero-bg" data-scroll data-scroll-speed="-2"></div>
+        </section>
+        
+        <!-- Секция 2: О проекте -->
+        <section class="about" data-scroll-section id="about">
+            <h2>О проекте</h2>
+            <p>Здесь будет ваше описание...</p>
+        </section>
+    </div>
+
+    <!-- Подключаем JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/scrolling.js"></script>
+</body>
+</html>

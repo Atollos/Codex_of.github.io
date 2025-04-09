@@ -1,0 +1,12 @@
+/* Подключаем Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+/* Основной шрифт */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Заголовки */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
